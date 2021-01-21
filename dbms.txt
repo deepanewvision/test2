@@ -1,0 +1,64 @@
+ DB Assignment - Due by 6:00 PM today 
+
+1 Go here https://sqliteonline.com/
+2 RUN Below DDL 
+3 email the assignment to training2020@newvisionsoftware.in before 6:00 PM
+------------------------
+CREATE TABLE Authors (
+    Id INT NOT NULL identity,
+    Name VARCHAR(70) NOT NULL,
+    Country VARCHAR(100) NOT NULL,
+    PRIMARY KEY(Id)
+);
+
+CREATE TABLE Books (
+    Id INT NOT NULL identity,
+    Title VARCHAR(150) NOT NULL,
+    Pages INT NOT NULL,
+    Price INT NOT NULL,	
+    PRIMARY KEY(Id)
+);
+
+CREATE TABLE BooksAuthors (
+    AuthorId INT NOT NULL,
+    BookId  INT NOT NULL,
+   
+    FOREIGN KEY (AuthorId) REFERENCES Authors(Id),
+    FOREIGN KEY (BookId) REFERENCES Books(Id)
+);
+
+INSERT INTO Authors (Name, Country) values('Chetan Bhagat','India') ;
+INSERT INTO Authors (Name, Country) values('KHUSHWANT SINGH','India') ;
+INSERT INTO Authors (Name, Country) values('Mark Twain','USA') ;
+INSERT INTO Authors (Name, Country) values('Alice Walker','USA') ;
+
+INSERT INTO BOOKS (Title,Pages, Price) values('One Indian Girl',567,500);
+INSERT INTO BOOKS (Title,Pages, Price) values('Making India Awesome',210,200);
+INSERT INTO BOOKS (Title,Pages, Price) values('Half Girlfriend',610,400);
+INSERT INTO BOOKS (Title,Pages, Price) values('Train to Pakistan',800,900);
+INSERT INTO BOOKS (Title,Pages, Price) values('The Color Purple',400,900);
+INSERT INTO BOOKS (Title,Pages, Price) values('The Tragedy Of Puddnhead Wilson and Those Extraordinary Twins',900,1900);
+
+
+
+INSERT INTO BOOKSAuthors (Authorid, bookId) values(1,2);
+INSERT INTO BOOKSAuthors (Authorid, bookId) values(1,3);
+INSERT INTO BOOKSAuthors (Authorid, bookId) values(1,1);
+INSERT INTO BOOKSAuthors (Authorid, bookId) values(2,4);
+INSERT INTO BOOKSAuthors (Authorid, bookId) values(3,5);
+INSERT INTO BOOKSAuthors (Authorid, bookId) values(3,6);
+INSERT INTO BOOKSAuthors (Authorid, bookId) values(4,6);
+
+--------------------------------------------------
+
+
+
+1) Find the Author who has written most number of books
+2) Find bottom 3 Authors by number of books they have written.
+3) Find the country with most Author
+4) Show Author name and total number page they have written so far putting all the books together 
+5) Find the author with costliest book price, show all his/her books
+
+
+
+https://sqliteonline.com/
